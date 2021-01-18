@@ -1,0 +1,36 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #4e83b6;
+}
+
+.result {
+  color: white;
+}
+
+.result h2 {
+  font-weight: bold;
+  color: white;
+}
+
+.result p {
+  font-size: 18px !important;
+}
+
+.result p span {
+  font-weight: bold;
+}
+
+p.price {
+  font-size: 30px !important;
+}
