@@ -26,7 +26,7 @@ const Button = styled.input`
 `;
 
 const Form = ({ setCurrency, setCrypto }) => {
-  const [cryptoList, saveCryptoList] = useState([]);
+  const [cryptoList, setCryptoList] = useState([]);
   const [error, setError] = useState(false);
 
   const currencies = [
@@ -53,7 +53,7 @@ const Form = ({ setCurrency, setCrypto }) => {
       const url =
         'https://min-api.cryptocompare.com/data/top/mktcapfull?limit=10&tsym=USD';
       const res = await axios.get(url);
-      saveCryptoList(res.data.Data);
+      setCryptoList(res.data.Data);
     };
     callAPI();
   }, []);

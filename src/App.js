@@ -47,7 +47,7 @@ const Heading = styled.h1`
 function App() {
   const [currency, setCurrency] = useState('');
   const [crypto, setCrypto] = useState('');
-  const [result, saveResult] = useState({});
+  const [result, setResult] = useState({});
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -58,7 +58,7 @@ function App() {
       setLoading(true);
       setTimeout(() => {
         setLoading(false);
-        saveResult(res.data.DISPLAY[crypto][currency]);
+        setResult(res.data.DISPLAY[crypto][currency]);
       }, 2000);
     };
     getPrice();

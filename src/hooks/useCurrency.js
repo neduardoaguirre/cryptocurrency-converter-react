@@ -21,12 +21,12 @@ const Select = styled.select`
 `;
 
 const useCurrency = (label, stateInitial, currencies) => {
-  const [state, updateState] = useState(stateInitial);
+  const [state, setState] = useState(stateInitial);
 
   const SelectCurrency = () => (
     <Fragment>
       <Label>{label}</Label>
-      <Select onChange={(e) => updateState(e.target.value)} value={state}>
+      <Select onChange={(e) => setState(e.target.value)} value={state}>
         <option value=""> -- Select -- </option>
         {currencies.map((currency) => (
           <option key={currency.code} value={currency.code}>
@@ -37,7 +37,7 @@ const useCurrency = (label, stateInitial, currencies) => {
     </Fragment>
   );
 
-  return [state, SelectCurrency, updateState];
+  return [state, SelectCurrency, setState];
 };
 
 export default useCurrency;
